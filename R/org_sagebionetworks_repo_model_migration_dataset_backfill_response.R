@@ -1,0 +1,215 @@
+#' Create a new OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse
+#'
+#' @description
+#' Response of DatasetBackfillingRequest.
+#'
+#' @docType class
+#' @title OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse
+#' @description OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse Class
+#' @format An \code{R6Class} generator object
+#' @field concreteType  character
+#' @field count  integer [optional]
+#' @importFrom R6 R6Class
+#' @importFrom jsonlite fromJSON toJSON
+#' @export
+OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse <- R6::R6Class(
+  "OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse",
+  public = list(
+    `concreteType` = NULL,
+    `count` = NULL,
+    #' Initialize a new OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse class.
+    #'
+    #' @description
+    #' Initialize a new OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse class.
+    #'
+    #' @param concreteType concreteType
+    #' @param count count
+    #' @param ... Other optional arguments.
+    #' @export
+    initialize = function(`concreteType`, `count` = NULL, ...) {
+      if (!missing(`concreteType`)) {
+        if (!(`concreteType` %in% c("org.sagebionetworks.repo.model.migration.DatasetBackfillResponse"))) {
+          stop(paste("Error! \"", `concreteType`, "\" cannot be assigned to `concreteType`. Must be \"org.sagebionetworks.repo.model.migration.DatasetBackfillResponse\".", sep = ""))
+        }
+        if (!(is.character(`concreteType`) && length(`concreteType`) == 1)) {
+          stop(paste("Error! Invalid data for `concreteType`. Must be a string:", `concreteType`))
+        }
+        self$`concreteType` <- `concreteType`
+      }
+      if (!is.null(`count`)) {
+        if (!(is.numeric(`count`) && length(`count`) == 1)) {
+          stop(paste("Error! Invalid data for `count`. Must be an integer:", `count`))
+        }
+        self$`count` <- `count`
+      }
+    },
+    #' To JSON string
+    #'
+    #' @description
+    #' To JSON String
+    #'
+    #' @return OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse in JSON format
+    #' @export
+    toJSON = function() {
+      OrgSagebionetworksRepoModelMigrationDatasetBackfillResponseObject <- list()
+      if (!is.null(self$`concreteType`)) {
+        OrgSagebionetworksRepoModelMigrationDatasetBackfillResponseObject[["concreteType"]] <-
+          self$`concreteType`
+      }
+      if (!is.null(self$`count`)) {
+        OrgSagebionetworksRepoModelMigrationDatasetBackfillResponseObject[["count"]] <-
+          self$`count`
+      }
+      OrgSagebionetworksRepoModelMigrationDatasetBackfillResponseObject
+    },
+    #' Deserialize JSON string into an instance of OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse
+    #'
+    #' @description
+    #' Deserialize JSON string into an instance of OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse
+    #'
+    #' @param input_json the JSON input
+    #' @return the instance of OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse
+    #' @export
+    fromJSON = function(input_json) {
+      this_object <- jsonlite::fromJSON(input_json)
+      if (!is.null(this_object$`concreteType`)) {
+        if (!is.null(this_object$`concreteType`) && !(this_object$`concreteType` %in% c("org.sagebionetworks.repo.model.migration.DatasetBackfillResponse"))) {
+          stop(paste("Error! \"", this_object$`concreteType`, "\" cannot be assigned to `concreteType`. Must be \"org.sagebionetworks.repo.model.migration.DatasetBackfillResponse\".", sep = ""))
+        }
+        self$`concreteType` <- this_object$`concreteType`
+      }
+      if (!is.null(this_object$`count`)) {
+        self$`count` <- this_object$`count`
+      }
+      self
+    },
+    #' To JSON string
+    #'
+    #' @description
+    #' To JSON String
+    #'
+    #' @return OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse in JSON format
+    #' @export
+    toJSONString = function() {
+      jsoncontent <- c(
+        if (!is.null(self$`concreteType`)) {
+          sprintf(
+          '"concreteType":
+            "%s"
+                    ',
+          self$`concreteType`
+          )
+        },
+        if (!is.null(self$`count`)) {
+          sprintf(
+          '"count":
+            %d
+                    ',
+          self$`count`
+          )
+        }
+      )
+      jsoncontent <- paste(jsoncontent, collapse = ",")
+      json_string <- as.character(jsonlite::minify(paste("{", jsoncontent, "}", sep = "")))
+    },
+    #' Deserialize JSON string into an instance of OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse
+    #'
+    #' @description
+    #' Deserialize JSON string into an instance of OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse
+    #'
+    #' @param input_json the JSON input
+    #' @return the instance of OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse
+    #' @export
+    fromJSONString = function(input_json) {
+      this_object <- jsonlite::fromJSON(input_json)
+      if (!is.null(this_object$`concreteType`) && !(this_object$`concreteType` %in% c("org.sagebionetworks.repo.model.migration.DatasetBackfillResponse"))) {
+        stop(paste("Error! \"", this_object$`concreteType`, "\" cannot be assigned to `concreteType`. Must be \"org.sagebionetworks.repo.model.migration.DatasetBackfillResponse\".", sep = ""))
+      }
+      self$`concreteType` <- this_object$`concreteType`
+      self$`count` <- this_object$`count`
+      self
+    },
+    #' Validate JSON input with respect to OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse
+    #'
+    #' @description
+    #' Validate JSON input with respect to OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse and throw an exception if invalid
+    #'
+    #' @param input the JSON input
+    #' @export
+    validateJSON = function(input) {
+      input_json <- jsonlite::fromJSON(input)
+      # check the required field `concreteType`
+      if (!is.null(input_json$`concreteType`)) {
+        if (!(is.character(input_json$`concreteType`) && length(input_json$`concreteType`) == 1)) {
+          stop(paste("Error! Invalid data for `concreteType`. Must be a string:", input_json$`concreteType`))
+        }
+      } else {
+        stop(paste("The JSON input `", input, "` is invalid for OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse: the required field `concreteType` is missing."))
+      }
+    },
+    #' To string (JSON format)
+    #'
+    #' @description
+    #' To string (JSON format)
+    #'
+    #' @return String representation of OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse
+    #' @export
+    toString = function() {
+      self$toJSONString()
+    },
+    #' Return true if the values in all fields are valid.
+    #'
+    #' @description
+    #' Return true if the values in all fields are valid.
+    #'
+    #' @return true if the values in all fields are valid.
+    #' @export
+    isValid = function() {
+      # check if the required `concreteType` is null
+      if (is.null(self$`concreteType`)) {
+        return(FALSE)
+      }
+
+      TRUE
+    },
+    #' Return a list of invalid fields (if any).
+    #'
+    #' @description
+    #' Return a list of invalid fields (if any).
+    #'
+    #' @return A list of invalid fields (if any).
+    #' @export
+    getInvalidFields = function() {
+      invalid_fields <- list()
+      # check if the required `concreteType` is null
+      if (is.null(self$`concreteType`)) {
+        invalid_fields["concreteType"] <- "Non-nullable required field `concreteType` cannot be null."
+      }
+
+      invalid_fields
+    },
+    #' Print the object
+    #'
+    #' @description
+    #' Print the object
+    #'
+    #' @export
+    print = function() {
+      print(jsonlite::prettify(self$toJSONString()))
+      invisible(self)
+    }
+  ),
+  # Lock the class to prevent modifications to the method or field
+  lock_class = TRUE
+)
+## Uncomment below to unlock the class to allow modifications of the method or field
+# OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse$unlock()
+#
+## Below is an example to define the print function
+# OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse$set("public", "print", function(...) {
+#   print(jsonlite::prettify(self$toJSONString()))
+#   invisible(self)
+# })
+## Uncomment below to lock the class to prevent modifications to the method or field
+# OrgSagebionetworksRepoModelMigrationDatasetBackfillResponse$lock()
+
