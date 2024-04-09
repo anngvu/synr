@@ -321,9 +321,9 @@ OrgSagebionetworksRepoModelSchemaValidationResults <- R6::R6Class(
     #'
     #' @return true if the values in all fields are valid.
     #' @export
-    isValid = function() {
-      TRUE
-    },
+    # isValid = function() {
+    #   TRUE
+    # },
     #' Return a list of invalid fields (if any).
     #'
     #' @description
